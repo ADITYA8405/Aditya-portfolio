@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 15 17 21; --card: 24 27 33; --fg: 236 232 225; --muted: 148 152 160; --line: 44 48 56; --accent: 245 185 66;
+  --spot: rgba(245, 185, 66, 0.10);
+}
+:root[data-theme="light"] {
+  --bg: 250 248 244; --card: 255 255 255; --fg: 24 26 31; --muted: 98 102 112; --line: 226 222 214; --accent: 176 108 0;
+  --spot: rgba(176, 108, 0, 0.09);
+}
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { background: rgb(var(--bg)); color: rgb(var(--fg)); -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 3px; border-radius: 4px; }
+::selection { background: rgb(var(--accent) / 0.35); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
